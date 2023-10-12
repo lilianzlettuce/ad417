@@ -13,24 +13,35 @@ AFRAME.registerComponent("add-lamps", {
             let lamp = document.createElement('a-entity')
             lamp.setAttribute('position', `0 0 ${-15 - dist * i}`)
             lamp.setAttribute('shadow', 'cast: true; receive: true;')
-            //lamp.setAttribute('dynamic-body', '')
 
             let lampOffset = 3
+            let lampHeadOffset = 0
             let lampHead = document.createElement('a-sphere')
-            lampHead.setAttribute('position', `${lampOffset} 20 0`)
+            lampHead.setAttribute('position', `${lampHeadOffset + lampOffset} 20 0`)
             lampHead.setAttribute('radius', '1.25')
             lampHead.setAttribute('material', 'color: white;')
-            //lampHead.setAttribute('dynamic-body', '')
 
             let lampPole = document.createElement('a-cylinder')
             lampPole.setAttribute('position', `${1.5 + lampOffset} 0 0`)
             lampPole.setAttribute('radius', '.5')
             lampPole.setAttribute('scale', '1 40 1')
             lampPole.setAttribute('material', 'color: gray;')
-            //lampPole.setAttribute('dynamic-body', '')
+            
+            let lampHilt = document.createElement('a-cylinder')
+            lampHilt.setAttribute('position', `${1.5 + lampOffset} -14.8 0`)
+            lampHilt.setAttribute('radius', '1.5')
+            lampHilt.setAttribute('scale', '1 .5 1')
+            lampHilt.setAttribute('material', 'color: gray;')
 
             lamp.appendChild(lampHead)
             lamp.appendChild(lampPole)
+            lamp.appendChild(lampHilt)
+
+            // physics 
+            //lamp.setAttribute('dynamic-body', '')
+            /*lampHead.setAttribute('dynamic-body', '')
+            lampPole.setAttribute('dynamic-body', '')
+            lampHilt.setAttribute('dynamic-body', '')*/
 
             // lamp lights
             let spotLight = document.createElement('a-light')
@@ -46,7 +57,7 @@ AFRAME.registerComponent("add-lamps", {
             spotLight2.setAttribute('light', 'type:spot; angle:30; color:yellow; castShadow:false;')*/
             
             let faceLight = document.createElement('a-light')
-            faceLight.setAttribute('position', `${lampOffset} 16 0`)
+            faceLight.setAttribute('position', `${lampHeadOffset + lampOffset} 16 0`)
             faceLight.setAttribute('intensity', '2')
             faceLight.setAttribute('rotation', '90 0 0')
             faceLight.setAttribute('light', 'type:spot; angle:30; color:#ffff7d; decay: .8; distance: 50; penumbra: .5; castShadow:true;')
