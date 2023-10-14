@@ -8,7 +8,7 @@ AFRAME.registerComponent("fall-on-touch", {
       let el = this.el
   
       el.addEventListener("click", (e) => {
-        el.setAttribute("dynamic-body", "debug: true; friction: 0.1; restitution: 0.5")
+        el.setAttribute("dynamic-body", "gravity:9.8; friction: 0.1; restitution: 0.5")
       })
     }
   })
