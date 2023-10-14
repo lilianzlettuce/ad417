@@ -1,7 +1,7 @@
 AFRAME.registerComponent("add-lamps", {
     init: function () {
         const scene = document.querySelector('a-scene')
-        const numlamps = 8
+        const numlamps = 7//max 8
         let dist = 100
         dist = 50
     
@@ -9,6 +9,9 @@ AFRAME.registerComponent("add-lamps", {
         scene.appendChild(lampHolder)
         
         for (let i = 0; i < numlamps; i++) {
+            let dur = 2000
+            let delay = i * 300
+
             // lamp object
             let lamp = document.createElement('a-entity')
             lamp.setAttribute('position', `0 0 ${-15 - dist * i}`)
@@ -47,8 +50,11 @@ AFRAME.registerComponent("add-lamps", {
             let spotLight = document.createElement('a-light')
             spotLight.setAttribute('position', `0 2 0`)
             spotLight.setAttribute('intensity', '3')
-            spotLight.setAttribute('rotation', '-90 0 45')
-            spotLight.setAttribute('light', 'type:spot; angle:50; color:#e3bc10; decay: .8; distance: 70; penumbra: .5; castShadow:true;')
+            spotLight.setAttribute('rotation', '-90 0 0')
+            spotLight.setAttribute('light', 'type:spot; angle:90; color:#e39910; decay: 0; distance: 70; penumbra: .1; castShadow:true;')
+            spotLight.setAttribute('light', 'type:spot; angle:60; color:#e39910; decay: 0; distance: 70; penumbra: 0; castShadow:true;')
+            spotLight.setAttribute('light', 'type:point; angle:60; color:#e39910; decay: .1; distance: 70; penumbra: 1; castShadow:true;')
+            spotLight.setAttribute('light', 'type:spot; angle:60; color:#e39910; decay: .1; distance: 70; penumbra: 1; castShadow:true;')
 
             /*let spotLight2 = document.createElement('a-light')
             spotLight2.setAttribute('position', `0 2 0`)
@@ -58,9 +64,9 @@ AFRAME.registerComponent("add-lamps", {
             
             let faceLight = document.createElement('a-light')
             faceLight.setAttribute('position', `${lampHeadOffset + lampOffset} 16 0`)
-            faceLight.setAttribute('intensity', '2')
+            faceLight.setAttribute('intensity', '3')
             faceLight.setAttribute('rotation', '90 0 0')
-            faceLight.setAttribute('light', 'type:spot; angle:30; color:#ffff7d; decay: .8; distance: 50; penumbra: .5; castShadow:true;')
+            faceLight.setAttribute('light', 'type:spot; angle:30; color:#ffab3d; decay: .5; distance: 50; penumbra: .5; castShadow:true;')
 
             /*let pointLight = document.createElement('a-light')
             pointLight.setAttribute('position', `0 12 0`)
@@ -72,8 +78,6 @@ AFRAME.registerComponent("add-lamps", {
             lamp.appendChild(faceLight)
             //lamp.appendChild(pointLight)
     
-            let dur = 2000
-            let delay = i * 300
             let lightAnim = {
                 property: 'intensity',
                 to: 3,

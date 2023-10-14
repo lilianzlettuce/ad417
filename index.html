@@ -1,7 +1,7 @@
 <html>
     <head>
 
-        <title>Drama in Space</title>
+        <title>Inverted Space</title>
         <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/4817e44b-5a6b-44ee-9bc8-f3431a700635/lettuce.jpg?v=1693276772913">
         <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
@@ -9,78 +9,80 @@
         <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.min.js"></script>
         <script src="lamp-script.js"></script>
         <script src="fall-on-touch.js"></script>
+        <script src="switch-1.js"></script>
     </head>
     <body>
         <a-scene 
-            add-lamps
-            physics="debug: false; friction: 0.1; restitution: 0.5;"
-            background="color: black" 
-            fog="type: exponential; 
-            color: black;
-            density: 0;">
-        <!--Assets-->
-        <a-assets>
-            <img id="metal-normal" src="">
-        </a-assets>
-        
-        <a-camera
-            static-body="gravity:0;"
-            position="0 1 0"
-            rotation="0 180 0"
-            cursor-visible="true"
-            cursor-scale="2"
-            cursor-color="#0095DD"
-            cursor-opacity="0.5">
-            <a-cursor></a-cursor>
-        </a-camera>
+                add-lamps
+                physics="debug: false; friction: 0.1; restitution: 0.5;"
+                background="color: black" 
+                fog="type: exponential; 
+                color: black;
+                density: .01;">
+            
+            <!--Assets-->
+            <a-assets>
+                <img id="metal-normal" src="">
+            </a-assets>
+            
+            <a-camera
+                static-body="gravity:0;"
+                position="0 1 0"
+                rotation="0 180 0"
+                cursor-visible="true"
+                cursor-scale="2"
+                cursor-color="#0095DD"
+                cursor-opacity="0.5">
+                <a-cursor></a-cursor>
+            </a-camera>
 
-        <!--<a-sky radius="1000" color="#e6e6e6"></a-sky>-->
-        
-        <a-torus-knot fall-on-touch
-            arc="180" p="2" q="7" radius="5" radius-tubular="1" position="0 0 10"
-            shadow="cast: true; receive: true;" 
-            material="color: cyan; transparent: true; opacity: 0"
-            animation="property: rotation; to: 0 0 360; loop: true; easing: linear; dur: 25000"></a-torus-knot>
+            <a-sky radius="1000" color="black"></a-sky>
+            
+            <a-torus-knot fall-on-touch
+                arc="180" p="2" q="7" radius="5" radius-tubular="1" position="0 0 10"
+                shadow="cast: true; receive: true;" 
+                material="color: cyan; transparent: true; opacity: 0"
+                animation="property: rotation; to: 0 0 360; loop: true; easing: linear; dur: 25000"></a-torus-knot>
 
-        <!--<a-entity position="0 4 0"
-                    animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 5000">
-            <a-box
-                color="green"
-                position="2 0 0"
-                animation="property: rotation; to: 0 -360 90; loop: true; easing: linear; dur: 5000">
-            </a-box>
-        </a-entity>-->
-        
-        <!-- floating shapes-->
-        
-        <a-torus-knot fall-on-touch
-                        arc="180" p="2" q="7" radius="5" radius-tubular=".1" 
-                        src="#gradient1"
-                        position="1 4 -2" rotation="0 0 0" color= "#ffffff"
-                        shadow="cast: true; receive: true;"
-                        material="transparent: true; opacity: 0"
-                        animation="property: rotation; to: 0 0 360; loop: true; easing: linear; dur: 25000"></a-torus-knot>
-        
-        <!--<a-sphere position="0 0 0" rotation="45 45 45" radius="1" scale="5 5 5"
-                    shadow="cast: false; receive: true;"
-                    material="color: #FFFFFF; transparent: true; opacity: .9"></a-sphere>-->
-        
-        <!--lights-->
-        
-        <!--<a-entity position="0 0 0"
-                    animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 10000">
-            <a-light type="directional" color="#FFFFFF" intensity="1" position="0 1 -5"
-                light="type:directional; castShadow:true; receiveShadow:true;
-                        shadowCameraLeft:-20; shadowCameraRight:11;
-                        shadowCameraTop:17;"></a-light>
-        </a-entity>
-        <a-light type="ambient" intensity="1" color="#ffadb6"></a-light>
-        -->
+            <!--<a-entity position="0 4 0"
+                        animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 5000">
+                <a-box
+                    color="green"
+                    position="2 0 0"
+                    animation="property: rotation; to: 0 -360 90; loop: true; easing: linear; dur: 5000">
+                </a-box>
+            </a-entity>-->
+            
+            <!-- floating shapes-->
+            
+            <a-torus-knot fall-on-touch
+                            arc="180" p="2" q="7" radius="5" radius-tubular=".1" 
+                            src="#gradient1"
+                            position="1 4 -2" rotation="0 0 0" color= "#ffffff"
+                            shadow="cast: true; receive: true;"
+                            material="transparent: true; opacity: 0"
+                            animation="property: rotation; to: 0 0 360; loop: true; easing: linear; dur: 25000"></a-torus-knot>
+            
+            <!--<a-sphere position="0 0 0" rotation="45 45 45" radius="1" scale="5 5 5"
+                        shadow="cast: false; receive: true;"
+                        material="color: #FFFFFF; transparent: true; opacity: .9"></a-sphere>-->
+            
+            <!--lights-->
+            
+            <!--<a-entity position="0 0 0"
+                        animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 10000">
+                <a-light type="directional" color="#FFFFFF" intensity="1" position="0 1 -5"
+                    light="type:directional; castShadow:true; receiveShadow:true;
+                            shadowCameraLeft:-20; shadowCameraRight:11;
+                            shadowCameraTop:17;"></a-light>
+            </a-entity>
+            <a-light type="ambient" intensity="1" color="#ffadb6"></a-light>
+            -->
 
-        <a-light type="ambient" intensity="0" color="#0009ff"></a-light>
-        <a-light color="#FFFFFF" intensity="0" position="20 10 20"></a-light>
-        
-        <a-plane static-body color="gray" rotation="-90 0 0" scale="1000 1000 1" position="0 -15 0" shadow="receive: true"></a-plane>
+            <a-light id="blue-ambience" type="ambient" intensity="0" color="#0009ff"></a-light>
+            <a-light color="#FFFFFF" intensity="0" position="20 10 20"></a-light>
+            
+            <a-plane switch-1 static-body color="gray" rotation="-90 0 0" scale="1000 1000 1" position="0 -15 0" shadow="receive: true"></a-plane>
         </a-scene>
     </body>
 </html>

@@ -3,6 +3,7 @@ AFRAME.registerComponent("fall-on-touch", {
   
       // initial variable declaration
       let sceneEl = document.querySelector('a-scene')
+      let ba = document.querySelector('#blue-ambience')
   
       let el = this.el
   
