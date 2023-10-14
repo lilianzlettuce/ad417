@@ -5,12 +5,13 @@ AFRAME.registerComponent("rain", {
         let sceneEl = document.querySelector('a-scene');
         let size = 10;
         // min/max values for random cube position
-        let minX = -150;
-        let maxX = 150;
+        let minX = -50;
+        let maxX = 50;
         let minY = 50;
         let maxY = 90;
         let minZ = -450;
-        let maxZ = 150;
+        minZ = -50;
+        let maxZ = 50;
         let spawnButton = this.el;
         
         setInterval((e) => {

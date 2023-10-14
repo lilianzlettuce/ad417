@@ -1,7 +1,7 @@
 <html>
     <head>
 
-        <title>Inverted Space</title>
+        <title>World's Edge</title>
         <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/4817e44b-5a6b-44ee-9bc8-f3431a700635/lettuce.jpg?v=1693276772913">
         <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
@@ -27,16 +27,18 @@
                 <img id="metal-normal" src="">
             </a-assets>
             
-            <a-camera
-                static-body="gravity:0;"
-                position="0 1 0"
-                rotation="0 180 0"
-                cursor-visible="true"
-                cursor-scale="2"
-                cursor-color="#0095DD"
-                cursor-opacity="0.5">
-                <a-cursor></a-cursor>
-            </a-camera>
+            <a-entity rotation="90 0 0">
+                <a-camera
+                    static-body="gravity:0;"
+                    position="0 1 0"
+                    rotation="0 180 0"
+                    cursor-visible="true"
+                    cursor-scale="2"
+                    cursor-color="#0095DD"
+                    cursor-opacity="0.5">
+                    <a-cursor></a-cursor>
+                </a-camera>
+            </a-entity>
 
             <a-sky radius="1000" color="black"></a-sky>
             
