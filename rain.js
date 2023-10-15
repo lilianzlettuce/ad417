@@ -11,9 +11,13 @@ AFRAME.registerComponent("rain", {
         let maxY = 90;
         let minZ = -450;
         let maxZ = 150;
-        let spawnButton = this.el;
+        let spawnButton = this.el
+
+        setTimeout(() => {
+            clearInterval(populate)
+        }, 10000);
         
-        setInterval((e) => {
+        let populate = setInterval((e) => {
             
             // create a new a-entity
             let cube = document.createElement('a-entity');

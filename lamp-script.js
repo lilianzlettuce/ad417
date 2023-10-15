@@ -10,7 +10,7 @@ AFRAME.registerComponent("add-lamps", {
         
         for (let i = 0; i < numlamps; i++) {
             let dur = 2000
-            let delay = i * 300
+            let delay = i * 1000
 
             // lamp object
             let lamp = document.createElement('a-entity')
@@ -49,7 +49,7 @@ AFRAME.registerComponent("add-lamps", {
             // lamp lights
             let spotLight = document.createElement('a-light')
             spotLight.setAttribute('position', `0 2 0`)
-            spotLight.setAttribute('intensity', '3')
+            spotLight.setAttribute('intensity', '0')
             spotLight.setAttribute('rotation', '-90 0 0')
             spotLight.setAttribute('light', 'type:spot; angle:90; color:#e39910; decay: 0; distance: 70; penumbra: .1; castShadow:true;')
             spotLight.setAttribute('light', 'type:spot; angle:60; color:#e39910; decay: 0; distance: 70; penumbra: 0; castShadow:true;')
@@ -64,7 +64,7 @@ AFRAME.registerComponent("add-lamps", {
             
             let faceLight = document.createElement('a-light')
             faceLight.setAttribute('position', `${lampHeadOffset + lampOffset} 16 0`)
-            faceLight.setAttribute('intensity', '3')
+            faceLight.setAttribute('intensity', '0')
             faceLight.setAttribute('rotation', '90 0 0')
             faceLight.setAttribute('light', 'type:spot; angle:30; color:#ffab3d; decay: .5; distance: 50; penumbra: .5; castShadow:true;')
 
@@ -93,6 +93,24 @@ AFRAME.registerComponent("add-lamps", {
             }
             faceLight.setAttribute('animation', lightAnim)
             spotLight.setAttribute('animation', lightAnim)
+
+            let maxDel = 16000
+            let minDel = 0
+            let maxDur = 10000
+            let minDur = 4000
+
+            let hoverAnim = {
+                property: 'position',
+                to: `${lampHeadOffset + lampOffset} 30 0`,
+                //easing: 'easeOutElastic',
+                //easing: 'linear',
+                easing: 'easeInOutQuad',
+                delay: Math.random() * (maxDel - minDel) + minDel,
+                dir: 'alternate',
+                dur: Math.random() * (maxDur - minDur) + minDur,
+                loop: true
+            }
+            //lampHead.setAttribute('animation', hoverAnim)
     
             lampHolder.appendChild(lamp)
       }

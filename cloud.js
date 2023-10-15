@@ -1,4 +1,4 @@
-AFRAME.registerComponent("rain", {
+AFRAME.registerComponent("cloud", {
     init: function () {
       
         // initial variable declaration
@@ -42,7 +42,7 @@ AFRAME.registerComponent("rain", {
                 dur: '500'
             });
             cube.setAttribute('fall-on-touch', '')
-            //cube.setAttribute("dynamic-body", "friction: 0.1; restitution: 0.5")
+            cube.setAttribute("dynamic-body", "friction: 0.1; restitution: 0.5")
 
             sceneEl.appendChild(cube)
         }, 1)
