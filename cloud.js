@@ -3,7 +3,7 @@ AFRAME.registerComponent("cloud", {
       
         // initial variable declaration
         let sceneEl = document.querySelector('a-scene');
-        let size = 50;
+        let size = 10;
         // min/max values for random cube position
         let minX = -50;
         let maxX = 50;
@@ -18,6 +18,7 @@ AFRAME.registerComponent("cloud", {
         cloud.id = 'cloud'
         sceneEl.appendChild(cloud)
         
+        let i = 1
         setInterval((e) => {
             
             // create a new a-entity
@@ -52,6 +53,9 @@ AFRAME.registerComponent("cloud", {
             }, 15000);
 
             cloud.appendChild(cube)
-        }, 1)
+
+            i++
+            size++
+        }, 100 / i)
     },
 })

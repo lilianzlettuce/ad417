@@ -13,7 +13,7 @@ AFRAME.registerComponent("switch-1", {
           sceneEl.setAttribute('fog', 'type: exponential; color: white; density: .01;')
           ba.setAttribute('intensity', '2')
         } else {
-          sceneEl.setAttribute('fog', 'type: exponential; color: black; density: .01;')
+          sceneEl.setAttribute('fog', 'type: exponential; color: gray; density: .01;')
           ba.setAttribute('intensity', '0')
         }
       })

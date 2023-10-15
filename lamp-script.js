@@ -67,7 +67,7 @@ AFRAME.registerComponent("add-lamps", {
             faceLight.setAttribute('position', `${lampHeadOffset + lampOffset} 16 0`)
             faceLight.setAttribute('intensity', '0')
             faceLight.setAttribute('rotation', '90 0 0')
-            faceLight.setAttribute('light', 'type:spot; angle:30; color:#ffab3d; decay: .5; distance: 50; penumbra: .5; castShadow:true;')
+            faceLight.setAttribute('light', 'type:spot; angle:30; color:#ffab3d; decay: .5; distance: 50; penumbra: 1; castShadow:true;')
 
             /*let pointLight = document.createElement('a-light')
             pointLight.setAttribute('position', `0 12 0`)
