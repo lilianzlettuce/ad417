@@ -13,6 +13,10 @@ AFRAME.registerComponent("cloud", {
         minZ = -50;
         let maxZ = 50;
         let spawnButton = this.el;
+
+        let cloud = document.createElement('a-entity')
+        cloud.id = 'cloud'
+        sceneEl.appendChild(cloud)
         
         setInterval((e) => {
             
@@ -47,7 +51,7 @@ AFRAME.registerComponent("cloud", {
                 cube.setAttribute("dynamic-body", "mass: 1")
             }, 15000);
 
-            sceneEl.appendChild(cube)
+            cloud.appendChild(cube)
         }, 1)
     },
 })

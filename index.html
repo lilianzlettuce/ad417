@@ -23,7 +23,7 @@
                 physics="debug: false; friction: 0.1; restitution: 0.5;"
                 background="color: black" 
                 fog="type: exponential; 
-                color: white;
+                color: gray;
                 density: 0.01;">
             
             <!--Assets-->
@@ -31,7 +31,7 @@
                 <img id="metal-normal" src="">
             </a-assets>
             
-            <a-entity rotation="0 0 0">
+            <a-entity camera-listener rotation="0 0 0">
                 <a-camera
                     static-body="mass: 1"
                     position="0 1 0"
@@ -92,7 +92,7 @@
             <a-light type="ambient" intensity="1" color="#ffadb6"></a-light>
             -->
 
-            <a-light id="blue-ambience" type="ambient" intensity="2" color="#0009ff"></a-light>
+            <a-light id="blue-ambience" type="ambient" intensity="0" color="#0009ff"></a-light>
             <a-light color="#FFFFFF" intensity="0" position="20 10 20"></a-light>
             
             <a-plane switch-1 static-body color="gray" rotation="-90 0 0" scale="1000 1000 1" position="0 -15 0" shadow="receive: true"></a-plane>
