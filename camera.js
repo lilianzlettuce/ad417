@@ -3,10 +3,9 @@ AFRAME.registerComponent('camera-listener', {
         let cameraEl = this.el.sceneEl.camera.el
         let pos = cameraEl.getAttribute('position')
     
-        console.log(pos)
         let posStr = `${pos.x} ${pos.y} ${pos.z}`
 
-        //document.getElementById('cloud').setAttribute('position', posStr)
+        // make cloud follow camera position with delayed movement
         let moveAnim = {
             property: 'position',
             to: posStr,
@@ -18,6 +17,9 @@ AFRAME.registerComponent('camera-listener', {
             dur: 3000,
             loop: false
         }
-        document.getElementById('cloud').setAttribute('animation', moveAnim)
+        console.log(document.getElementsByClassName('cloud-cube').length)
+        if (document.getElementsByClassName('cloud-cube').length < 600) {
+            document.getElementById('cloud').setAttribute('animation', moveAnim)
+        }
     }
 });

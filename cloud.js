@@ -22,8 +22,8 @@ AFRAME.registerComponent("cloud", {
         setInterval((e) => {
             
             // create a new a-entity
-            let cube = document.createElement('a-entity');
-            // set attributes of the new a-entity, like geometry, size, position and color
+            let cube = document.createElement('a-entity')
+            cube.classList.add('cloud-cube')
             cube.setAttribute('geometry', {
                         primitive: 'box',
                         height: '0.1',
