@@ -3,9 +3,12 @@ AFRAME.registerComponent('camera-listener', {
         let cameraEntity = document.getElementById('camera-entity')
         cameraEntity.setAttribute('geometry', {
             primitive: 'box',
-            height: '1',
-            width: '1',
-            depth: '1',
+            height: '10',
+            width: '10',
+            depth: '10',
+        })
+        cameraEntity.setAttribute('material', {
+            color: '#ed1b24'
         })
     },
     tick: function () {
@@ -15,6 +18,12 @@ AFRAME.registerComponent('camera-listener', {
         let posStr = `${pos.x} ${pos.y} ${pos.z}`
 
         console.log(posStr)
+
+        // update camera entity pos to be same as camera pos
+        let cameraEntity = document.getElementById('camera-entity')
+        cameraEntity.setAttribute('position', posStr)
+        console.log('entity: ' + cameraEntity.getAttribute('position').x)
+
         // make cloud follow camera position with delayed movement
         let moveAnim = {
             property: 'position',
@@ -42,9 +51,12 @@ AFRAME.registerComponent('camera-listener', {
             dur: 3000,
             loop: false
         }
-        let cameraEntity = document.getElementById('camera-entity')
+        
         if (pos.z < -100) {
             cameraEntity.setAttribute('animation', rotateAnim)
+            
+            let newPosStr = `${pos.x} ${pos.y} 0`
+            cameraEl.setAttribute('position', newPosStr)
         } else {
             //cameraEntity.setAttribute('rotation', '0 0 0')
         }
