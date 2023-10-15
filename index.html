@@ -19,7 +19,7 @@
                 physics="debug: false; friction: 0.1; restitution: 0.5;"
                 background="color: black" 
                 fog="type: exponential; 
-                color: black;
+                color: white;
                 density: 0.01;">
             
             <!--Assets-->
@@ -27,22 +27,18 @@
                 <img id="metal-normal" src="">
             </a-assets>
             
-            <!--<a-entity rotation="0 0 0">
+            <a-entity rotation="0 0 0">
                 <a-camera
                     static-body="mass: 1"
                     position="0 1 0"
                     rotation="0 180 0"
+                    wasd-controls="acceleration: 100"
                     cursor-visible="true"
                     cursor-scale="2"
                     cursor-color="#0095DD"
                     cursor-opacity="0.5">
                     <a-cursor></a-cursor>
                 </a-camera>
-            </a-entity>-->
-
-            <a-entity id="camera" camera
-                position="0 1.6 0"
-                extended-wasd-controls="flyEnabled: true; turnEnabled: true; lookEnabled: true; maxLookAngle: 60;">
             </a-entity>
 
             <a-sky radius="1000" color="black"></a-sky>
@@ -90,7 +86,7 @@
             <a-light type="ambient" intensity="1" color="#ffadb6"></a-light>
             -->
 
-            <a-light id="blue-ambience" type="ambient" intensity="0" color="#0009ff"></a-light>
+            <a-light id="blue-ambience" type="ambient" intensity="2" color="#0009ff"></a-light>
             <a-light color="#FFFFFF" intensity="0" position="20 10 20"></a-light>
             
             <a-plane switch-1 static-body color="gray" rotation="-90 0 0" scale="1000 1000 1" position="0 -15 0" shadow="receive: true"></a-plane>

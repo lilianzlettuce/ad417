@@ -77,6 +77,8 @@ AFRAME.registerComponent("add-lamps", {
             //lamp.appendChild(spotLight2)
             lamp.appendChild(faceLight)
             //lamp.appendChild(pointLight)
+
+            lamp.setAttribute('scale', '1 1 1')
     
             let lightAnim = {
                 property: 'intensity',
