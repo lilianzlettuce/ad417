@@ -24,6 +24,8 @@ AFRAME.registerComponent("cloud", {
             // create a new a-entity
             let cube = document.createElement('a-entity')
             cube.classList.add('cloud-cube')
+
+            // create base geometry
             cube.setAttribute('geometry', {
                         primitive: 'box',
                         height: '0.1',
@@ -45,9 +47,20 @@ AFRAME.registerComponent("cloud", {
                 to: size.toString()+ ' '+size.toString()+' '+size.toString(),
                 easing: 'easeOutElastic',
                 dur: '500'
-            });
+            })
             cube.setAttribute('fall-on-touch', '')
 
+            // animation on click
+            cube.addEventListener('mouseenter', () => {
+                cube.setAttribute('animation', {
+                    property: 'scale',
+                    to: '0 0 0',
+                    easing: 'easeOutElastic',
+                    dur: '1000'
+                })
+            })
+
+            // fall after a set time 
             setTimeout(() => {
                 cube.setAttribute("dynamic-body", "mass: 1")
             }, 15000);
@@ -56,6 +69,7 @@ AFRAME.registerComponent("cloud", {
 
             i++
             size++
+            //size=50
         }, 100 / i)
     },
 })
