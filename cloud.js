@@ -42,7 +42,10 @@ AFRAME.registerComponent("cloud", {
                 dur: '500'
             });
             cube.setAttribute('fall-on-touch', '')
-            cube.setAttribute("dynamic-body", "friction: 0.1; restitution: 0.5")
+
+            setTimeout(() => {
+                cube.setAttribute("dynamic-body", "mass: 1")
+            }, 15000);
 
             sceneEl.appendChild(cube)
         }, 1)

@@ -14,6 +14,7 @@ AFRAME.registerComponent("add-lamps", {
 
             // lamp object
             let lamp = document.createElement('a-entity')
+            lamp.classList.add('lamp')
             lamp.setAttribute('position', `0 0 ${-15 - dist * i}`)
             lamp.setAttribute('shadow', 'cast: true; receive: true;')
 
@@ -113,6 +114,12 @@ AFRAME.registerComponent("add-lamps", {
             //lampHead.setAttribute('animation', hoverAnim)
     
             lampHolder.appendChild(lamp)
-      }
+        }
+    },
+    update: function () {
+        let lamps = document.getElementsByClassName('lamp')
+        for (let i = 0; i < lamps.length; i++) {
+            //lamps[i].setAttribute('scale', '2 2 2')
+        }
     }
   })
