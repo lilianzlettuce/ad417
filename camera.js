@@ -9,7 +9,7 @@ AFRAME.registerComponent('camera-listener', {
 
         // update camera entity pos to be same as camera pos
         let cameraEntity = document.getElementById('camera-entity')
-        cameraEntity.setAttribute('position', posStr)
+        //cameraEntity.setAttribute('position', posStr)
 
         // make cloud follow camera position with delayed movement
         let moveAnim = {
