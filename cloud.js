@@ -64,8 +64,17 @@ AFRAME.registerComponent("cloud", {
 
             cloud.appendChild(cube)
 
+            // update gen values
+            /*let incr = 1
+            minX -= incr
+            maxX += incr
+            minY += incr
+            maxY += incr
+            minZ -= incr
+            maxZ += incr*/
+
             i++
             size++
-        }, 100 / i)
+        }, 100 / (1 * i))
     },
 })

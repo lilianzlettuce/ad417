@@ -2,7 +2,7 @@ AFRAME.registerComponent("static-cloud", {
     init: function () {
         // initial variable declaration
         let sceneEl = document.querySelector('a-scene')
-        let size = 10
+        let size = 50
         // min/max values for random cube position
         let minX = -50
         let maxX = 50
@@ -12,14 +12,14 @@ AFRAME.registerComponent("static-cloud", {
         let maxZ = 50
 
         let cloud = document.createElement('a-entity')
-        cloud.id = 'cloud'
+        cloud.id = 'static-cloud'
         sceneEl.appendChild(cloud)
         
         let i = 1
         setInterval(() => {
             // create a new a-entity
             let cube = document.createElement('a-entity')
-            cube.classList.add('cloud-cube')
+            cube.classList.add('static-cloud-cube')
 
             // create base geometry
             cube.setAttribute('geometry', {
@@ -46,16 +46,6 @@ AFRAME.registerComponent("static-cloud", {
             })
             cube.setAttribute('fall-on-touch', '')
 
-            // animation on click
-            cube.addEventListener('mouseenter', () => {
-                cube.setAttribute('animation', {
-                    property: 'scale',
-                    to: '0 0 0',
-                    easing: 'easeOutElastic',
-                    dur: '1000'
-                })
-            })
-
             // fall after a set time 
             setTimeout(() => {
                 cube.setAttribute("dynamic-body", "mass: 1")
@@ -64,7 +54,6 @@ AFRAME.registerComponent("static-cloud", {
             cloud.appendChild(cube)
 
             i++
-            size++
         }, 100 / i)
     },
 })
