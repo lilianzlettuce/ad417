@@ -16,44 +16,46 @@ AFRAME.registerComponent("static-cloud", {
         sceneEl.appendChild(cloud)
         
         let i = 1
-        setInterval(() => {
-            // create a new a-entity
-            let cube = document.createElement('a-entity')
-            cube.classList.add('static-cloud-cube')
-
-            // create base geometry
-            cube.setAttribute('geometry', {
-                        primitive: 'box',
-                        height: '0.1',
-                        width: '0.1',
-                        depth: '0.1',
-                    })
-            cube.setAttribute('material', {
-                color: '#ed1b24'
-            })
-            
-            // create random x, y, z position values within range:
-            let posX = Math.random() * (maxX - minX) + minX
-            let posY = Math.random() * (maxY - minY) + minY
-            let posZ = Math.random() * (maxZ - minZ) + minZ
-            
-            cube.setAttribute('position', posX.toString()+ ' '+posY.toString()+' '+posZ.toString());
-            cube.setAttribute('animation', {
-                property: 'scale',
-                to: size.toString()+ ' '+size.toString()+' '+size.toString(),
-                easing: 'easeOutElastic',
-                dur: '500'
-            })
-            cube.setAttribute('fall-on-touch', '')
-
-            // fall after a set time 
-            setTimeout(() => {
-                cube.setAttribute("dynamic-body", "mass: 1")
-            }, 15000);
-
-            cloud.appendChild(cube)
-
-            i++
-        }, 100 / i)
+        setTimeout(() => {
+            setInterval(() => {
+                // create a new a-entity
+                let cube = document.createElement('a-entity')
+                cube.classList.add('static-cloud-cube')
+    
+                // create base geometry
+                cube.setAttribute('geometry', {
+                            primitive: 'box',
+                            height: '0.1',
+                            width: '0.1',
+                            depth: '0.1',
+                        })
+                cube.setAttribute('material', {
+                    color: '#ed1b24'
+                })
+                
+                // create random x, y, z position values within range:
+                let posX = Math.random() * (maxX - minX) + minX
+                let posY = Math.random() * (maxY - minY) + minY
+                let posZ = Math.random() * (maxZ - minZ) + minZ
+                
+                cube.setAttribute('position', posX.toString()+ ' '+posY.toString()+' '+posZ.toString());
+                cube.setAttribute('animation', {
+                    property: 'scale',
+                    to: size.toString()+ ' '+size.toString()+' '+size.toString(),
+                    easing: 'easeOutElastic',
+                    dur: '500'
+                })
+                cube.setAttribute('fall-on-touch', '')
+    
+                // fall after a set time 
+                setTimeout(() => {
+                    cube.setAttribute("dynamic-body", "mass: 1")
+                }, 5000);
+    
+                cloud.appendChild(cube)
+    
+                i++
+            }, 100 / i)
+        }, 45000);
     },
 })

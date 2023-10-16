@@ -45,7 +45,6 @@ AFRAME.registerComponent("cloud", {
                 easing: 'easeOutElastic',
                 dur: '500'
             })
-            cube.setAttribute('fall-on-touch', '')
 
             // animation on click
             cube.addEventListener('mouseenter', () => {

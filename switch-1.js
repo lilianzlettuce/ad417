@@ -45,10 +45,11 @@ AFRAME.registerComponent("switch-1", {
             sceneEl.setAttribute('fog', 'type: exponential; color: white; density: .01;')
             ba.setAttribute('intensity', '2')
             document.querySelector('#cloud').setAttribute('scale', '0 0 0')
+            document.querySelector('#static-cloud').setAttribute('scale', '1 1 1')
           }, 250);
         } else {
           // change to gray environment
-          
+
           // camera flip anim
           cameraEntity.setAttribute('animation', {
             property: 'rotation',
@@ -68,6 +69,7 @@ AFRAME.registerComponent("switch-1", {
             sceneEl.setAttribute('fog', 'type: exponential; color: gray; density: .01;')
             ba.setAttribute('intensity', '0')
             document.querySelector('#cloud').setAttribute('scale', '1 1 1')
+            document.querySelector('#static-cloud').setAttribute('scale', '0 0 0')
           }, 250);
         }
       }
