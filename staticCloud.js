@@ -1,6 +1,5 @@
-AFRAME.registerComponent("cloud", {
+AFRAME.registerComponent("static-cloud", {
     init: function () {
-      
         // initial variable declaration
         let sceneEl = document.querySelector('a-scene')
         let size = 10
