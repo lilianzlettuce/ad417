@@ -5,20 +5,19 @@ AFRAME.registerComponent("rain", {
         let sceneEl = document.querySelector('a-scene');
         let size = 15;
         // min/max values for random cube position
-        let minX = -150;
-        let maxX = 150;
+        let minX = -200;
+        let maxX = 200;
         let minY = 50;
         let maxY = 90;
-        let minZ = -450;
+        let minZ = -350;
         let maxZ = 150;
         let spawnButton = this.el
 
         setTimeout(() => {
             clearInterval(populate)
-        }, 10000);
+        }, 10000)
         
         let populate = setInterval((e) => {
-            
             // create a new a-entity
             let cube = document.createElement('a-entity');
             // set attributes of the new a-entity, like geometry, size, position and color
@@ -44,10 +43,20 @@ AFRAME.registerComponent("rain", {
                 easing: 'easeOutElastic',
                 dur: '500'
             });
-            cube.setAttribute('fall-on-touch', '')
+            //cube.setAttribute('fall-on-touch', '')
             //cube.setAttribute("dynamic-body", "friction: 0.1; restitution: 0.5")
 
             sceneEl.appendChild(cube)
+            
+            /*setTimeout(() => {
+                cube.setAttribute('animation', {
+                    property: 'scale',
+                    to: '0 0 0',
+                    easing: 'easeOutElastic',
+                    dur: '1000'
+                })
+                //sceneEl.removeChild(cube)
+            }, 10000);*/
         }, 1)
     },
   })

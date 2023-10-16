@@ -26,11 +26,6 @@
                 color: gray;
                 density: 0.01;">
             
-            <!--Assets-->
-            <a-assets>
-                <img id="metal-normal" src="">
-            </a-assets>
-            
             <a-entity id="camera-entity" camera-listener position="0 0 0" rotation="0 0 0">
                 <a-camera
                     static-body="mass: 1"
@@ -48,14 +43,11 @@
             <a-sky radius="1000" color="black"></a-sky>
 
             <!--objects-->
-            
             <a-torus-knot fall-on-touch
                 arc="180" p="2" q="7" radius="5" radius-tubular="1" position="0 0 10"
                 shadow="cast: true; receive: true;" 
                 material="color: cyan; transparent: true; opacity: 0"
                 animation="property: rotation; to: 0 0 360; loop: true; easing: linear; dur: 25000"></a-torus-knot>
-            
-            <!-- floating shapes-->
             
             <a-torus-knot fall-on-touch
                             arc="180" p="2" q="7" radius="5" radius-tubular=".1" 
@@ -66,17 +58,6 @@
                             animation="property: rotation; to: 0 0 360; loop: true; easing: linear; dur: 25000"></a-torus-knot>
             
             <!--lights-->
-            
-            <!--<a-entity position="0 0 0"
-                        animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 10000">
-                <a-light type="directional" color="#FFFFFF" intensity="1" position="0 1 -5"
-                    light="type:directional; castShadow:true; receiveShadow:true;
-                            shadowCameraLeft:-20; shadowCameraRight:11;
-                            shadowCameraTop:17;"></a-light>
-            </a-entity>
-            <a-light type="ambient" intensity="1" color="#ffadb6"></a-light>
-            -->
-
             <a-light id="blue-ambience" type="ambient" intensity="0" color="#0009ff"></a-light>
             <a-light color="#FFFFFF" intensity="0" position="20 10 20"></a-light>
             
