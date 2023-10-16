@@ -56,6 +56,6 @@ AFRAME.registerComponent("static-cloud", {
     
                 i++
             }, 100 / i)
-        }, 40000);
+        }, 90000);
     },
 })
