@@ -22,9 +22,12 @@
 
 .menu {
     display: flex;
+    display: none;
+    flex-wrap: wrap;
     position: absolute;
     top: 0;
     right: 0;
     width: 50vw;
     height: 100vh;
+    background-color: rgba(0, 0, 0, 0.629);
 }
