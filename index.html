@@ -16,6 +16,8 @@
         <script src="staticCloud.js"></script>
         <script src="camera.js"></script>
 
+        <script src="index.js"></script>
+
         <script src="https://kit.fontawesome.com/df8ef38841.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="index.css">
     </head>
@@ -64,13 +66,24 @@
             
             <a-plane switch-1 static-body color="gray" rotation="-90 0 0" scale="800 800 1" position="0 -15 0" shadow="receive: true"></a-plane>
         </a-scene>
-        <div class="menu">
-            <img src="wasd.svg" alt="WASD" width="200px"/>
-            <img src="arrows.svg" alt="WASD" width="200px"/>
-            <img src="space.svg" alt="WASD" width="200px"/>
-            <img src="mouse.svg" alt="WASD" width="50px"/>
+        <div class="menu" id="menu">
+            <div class="controls-container">
+                <div class="controls-text">Look</div>
+                <img src="mouse.svg" alt="WASD" width="40px"/>
+            </div>
+            <div class="controls-container">
+                <div class="controls-text">Move</div>
+                <div>
+                    <img src="wasd.svg" alt="WASD" width="200px" style="margin-right: 10px;"/>
+                    <img src="arrows.svg" alt="WASD" width="200px" style="margin-left: 10px;"/>
+                </div>
+            </div>
+            <div class="controls-container">
+                <div class="controls-text">Warp</div>
+                <img src="space.svg" alt="WASD" width="230px"/>
+            </div>
         </div>
-        <div class="menu-btn">
+        <div class="menu-btn" id="menu-btn">
             <div class="menu-btn-border">
                 <i class="fa-solid fa-gamepad"></i>
             </div>
